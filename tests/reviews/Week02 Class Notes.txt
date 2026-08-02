@@ -1,0 +1,22 @@
+Week02 Review:
+
+    Topics:
+        Playwright Fundamentals 
+            Test Function
+            page fxitur
+            Hooks
+
+        Global Configurations
+            headed/headless
+            Parallel
+            retries
+            playwright browsers
+
+            Recording test videos
+            Local Desktop browser configurations
+            Mobile browser configurations
+
+        SEP Project
+
+Set up the playwright:
+    npm init playwright@latest

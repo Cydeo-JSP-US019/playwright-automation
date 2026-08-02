@@ -4,7 +4,7 @@ test.describe("Test Group", () => {
 
   // create beforeEach to navigate to https://practice.cydeo.com/
   test.beforeEach(async ({ page }) => {
-    await page.goto("https://practice.cydeo.com/");
+    await page.goto("https://the-internet-5chk.onrender.com/");
   });
 
 
