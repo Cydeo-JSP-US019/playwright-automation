@@ -18,5 +18,7 @@ Week02 Review:
 
         SEP Project
 
+come back at 11:50 AM EST
+
 Set up the playwright:
     npm init playwright@latest
