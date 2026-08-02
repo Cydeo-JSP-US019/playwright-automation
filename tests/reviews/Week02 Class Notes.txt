@@ -22,3 +22,24 @@ come back at 11:50 AM EST
 
 Set up the playwright:
     npm init playwright@latest
+
+
+======================
+
+Atlassian MCP:
+    Jira
+    Confluence
+    Wiki
+
+
+BitBucket MCP:
+    BitBucket
+
+
+Playwright MCP:
+    Playwright
+        Planner
+        Genrator
+        Healer
+
+
