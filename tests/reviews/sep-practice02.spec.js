@@ -36,11 +36,11 @@ test.describe('Payment Plan Page', () => {
   });
 
   test('Verify Clicking the active next button will change the stepper 2 color to green', async ({ page }) => {
-    await CommonUI.selectPaymentPlan(page);
+    await CommonUI.selectPaymentPlan(page, "installments");
 
     let activeNextButton = page.locator("//button[text()='Next']");
     await activeNextButton.click();
-    
+
     let paymentPlanCircle = page.locator("(//div[@class='step-circle'])[2]");
     await expect(paymentPlanCircle).toHaveCSS('background-color', 'rgb(172, 245, 138)');
 
