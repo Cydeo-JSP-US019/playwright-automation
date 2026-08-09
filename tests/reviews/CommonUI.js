@@ -1,3 +1,5 @@
+import { expect } from "@playwright/test";
+
 export class CommonUI{
 
     static async login(page){
@@ -22,5 +24,14 @@ export class CommonUI{
         await howDidYouHearOption.click();
 
     }
+
+    static async completeStartApplicationStep(page, firstName="John", lastName="Doe", email="john.doe@cydeo.com", phoneNumber="123-456-7890", howDidYouHear="Email"){
+        await this.enterPersonalDetails(page, firstName, lastName, email, phoneNumber, howDidYouHear);
+        let nextButton = page.locator("//button[text()=' Next']")
+        await nextButton.click();
+        let startApplicationCircle = page.locator("(//div[@class='step-circle'])[1]");
+        await expect(startApplicationCircle).toHaveCSS('background-color', 'rgb(172, 245, 138)');
+    }
+
 
 }

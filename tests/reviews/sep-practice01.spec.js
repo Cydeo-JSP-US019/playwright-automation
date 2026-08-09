@@ -28,13 +28,8 @@ test.describe('Start Application Step Tests', () => {
         let startApplicationCircle = page.locator("(//div[@class='step-circle'])[1]");
         await expect(startApplicationCircle).toHaveCSS('background-color', 'rgb(1, 201, 255)');
 
-        await CommonUI.enterPersonalDetails(page, "Muhtar", "Mahmut", "muhtar.mahmut@cydeo.com", "123-456-7890", "Email");
+        await CommonUI.completeStartApplicationStep(page);
 
-        let nextButton = page.locator("//button[text()=' Next']")
-        await nextButton.click();
-
-        await expect(startApplicationCircle).toHaveCSS('background-color', 'rgb(172, 245, 138)');
-        
         let paymentPlanCircle = page.locator("(//div[@class='step-circle'])[2]");
         await expect(paymentPlanCircle).toHaveCSS('background-color', 'rgb(1, 201, 255)');
 
