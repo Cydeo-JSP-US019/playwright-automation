@@ -26,23 +26,21 @@ test.describe('Start Application Step Tests', () => {
 
   test('Verify that the first stepper is blue initially and changes to green once Step 1 is completed', async ({ page }) => {
         let startApplicationCircle = page.locator("(//div[@class='step-circle'])[1]");
-        let paymentPlanCircle = page.locator("(//div[@class='step-circle'])[2]");
+        await expect(startApplicationCircle).toHaveCSS('background-color', 'rgb(1, 201, 255)');
 
-        let firstNameInput = page.locator("//input[@formcontrolname='firstName']");
-        let lastNameInput = page.locator("//input[@formcontrolname='lastName']");
-        let emailInput = page.locator("//input[@formcontrolname='email']");
-        let phoneInput = page.locator("//input[@formcontrolname='phoneNumber']");
+        await CommonUI.enterPersonalDetails(page, "Muhtar", "Mahmut", "muhtar.mahmut@cydeo.com", "123-456-7890", "Email");
 
+        let nextButton = page.locator("//button[text()=' Next']")
+        await nextButton.click();
+
+        await expect(startApplicationCircle).toHaveCSS('background-color', 'rgb(172, 245, 138)');
         
-
-
-       
-
-        // how did you hear about us ===> Nirmal
-        // next button ===> Nirmal
-
+        let paymentPlanCircle = page.locator("(//div[@class='step-circle'])[2]");
+        await expect(paymentPlanCircle).toHaveCSS('background-color', 'rgb(1, 201, 255)');
 
   });
+
+
 
   test('Verify that personal input fields are enabled and accept user input', async ({ page }) => {
 
