@@ -16,6 +16,8 @@ Next Week:
         GitHub Actions ( .yml )
         Browser & Context Fixture for UI testing
 
+        prompt templates for getBy methods locators of playwright
+
         Request & BaseURL Fixture for API Testing:
             GET Method
             POST Method
