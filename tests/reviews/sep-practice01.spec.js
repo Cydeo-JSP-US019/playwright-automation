@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { CommonUI } from './CommonUI';
+import { faker  } from '@faker-js/faker';
 
 test.describe('Start Application Step Tests', () => {
 
@@ -28,7 +29,15 @@ test.describe('Start Application Step Tests', () => {
         let startApplicationCircle = page.locator("(//div[@class='step-circle'])[1]");
         await expect(startApplicationCircle).toHaveCSS('background-color', 'rgb(1, 201, 255)');
 
-        await CommonUI.completeStartApplicationStep(page);
+        let firstname = faker.person.firstName();
+        let lastname = faker.person.lastName();
+        let email = faker.internet.email({ firstName: firstname, lastName: lastname });
+        let phoneNumber = faker.phone.number('###-###-####');
+        
+        const hearAboutUsOptions = ['Email', 'Facebook', 'Google', 'Instagram', 'LinkedIn', 'Twitter', 'Referred by a friend or colleague', 'Other'];
+        let howDidYouHear = hearAboutUsOptions[Math.floor(Math.random() * hearAboutUsOptions.length)];
+
+        await CommonUI.completeStartApplicationStep(page, firstname, lastname, email, phoneNumber, howDidYouHear);
 
         let paymentPlanCircle = page.locator("(//div[@class='step-circle'])[2]");
         await expect(paymentPlanCircle).toHaveCSS('background-color', 'rgb(1, 201, 255)');
