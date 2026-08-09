@@ -32,7 +32,7 @@ test.describe('Start Application Step Tests', () => {
         let firstname = faker.person.firstName();
         let lastname = faker.person.lastName();
         let email = faker.internet.email({ firstName: firstname, lastName: lastname });
-        let phoneNumber = faker.phone.number('###-###-####');
+        let phoneNumber = faker.string.numeric(10);
         
         const hearAboutUsOptions = ['Email', 'Facebook', 'Google', 'Instagram', 'LinkedIn', 'Twitter', 'Referred by a friend or colleague', 'Other'];
         let howDidYouHear = hearAboutUsOptions[Math.floor(Math.random() * hearAboutUsOptions.length)];
@@ -47,6 +47,23 @@ test.describe('Start Application Step Tests', () => {
 
 
   test('Verify that personal input fields are enabled and accept user input', async ({ page }) => {
+        let firstname = faker.person.firstName(); // Muhtar
+        let lastname = faker.person.lastName();
+        let email = faker.internet.email({ firstName: firstname, lastName: lastname });
+        let phoneNumber = faker.string.numeric(10);
+
+        let firstNameInput = page.locator("//input[@formcontrolname='firstName']");
+        let lastNameInput = page.locator("//input[@formcontrolname='lastName']");
+        let emailInput = page.locator("//input[@formcontrolname='email']");
+        let phoneInput = page.locator("//input[@formcontrolname='phoneNumber']");
+
+        await CommonUI.enterPersonalDetails(page, firstname, lastname, email, phoneNumber);
+
+        await expect(firstNameInput).toHaveValue(firstname);
+        await expect(lastNameInput).toHaveValue(lastname);
+        await expect(emailInput).toHaveValue(email);
+        await expect(phoneInput).toHaveValue(phoneNumber);
+
 
   });
 
