@@ -5,21 +5,27 @@ Week03
         Playwright Review
         Extra Perplexity Spaces
 
-Class Starts at 10:05 AM EST
+// come back at 11:40 AM EST
 
-    Next Week:
-        During the week days:
-            Jenkins Job Configurations (3 hours videos)
-            Feature files for SEP User stories
+Next Week:
+    During the week days:
+        Jenkins Job Configurations (3 hours videos)
+        Feature files for SEP User stories
 
-        During the live class:
-            GitHub Actions ( .yml )
-            Browser & Context Fixture for UI testing
+    During the live class:
+        GitHub Actions ( .yml )
+        Browser & Context Fixture for UI testing
 
-            Request & BaseURL Fixture for API Testing:
-                GET Method
-                POST Method
-                PUT Method
-                PATCH Method
-                DELETE Method
-                Serilization & Deserilizations
+        Request & BaseURL Fixture for API Testing:
+            GET Method
+            POST Method
+            PUT Method
+            PATCH Method
+            DELETE Method
+            Serilization & Deserilizations
+
+
+Next Next Week:
+    Project Implementation Week
+    Playwright BDD framework
+
