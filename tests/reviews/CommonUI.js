@@ -33,5 +33,24 @@ export class CommonUI{
         await expect(startApplicationCircle).toHaveCSS('background-color', 'rgb(172, 245, 138)');
     }
 
+    static async selectPaymentPlan(page, planName="Upfront"){
+
+        planName = planName.toLowerCase();
+        let upfrontPaymentPlan = page.locator("//mat-expansion-panel-header[.//span[contains(@class,'payment-type') and normalize-space(.)='Upfront']]");
+        let installmentsPaymentPlan = page.locator("//mat-expansion-panel-header[.//span[contains(@class,'payment-type') and normalize-space(.)='5 Installments']]");
+
+        switch(planName){
+            case "upfront":
+                await upfrontPaymentPlan.click();
+                break;
+            case "installments":
+                await installmentsPaymentPlan.click();
+                break;
+            default:
+                throw new Error(`Invalid plan name: ${planName}. Valid options are 'upfront' or 'installments'.`);
+        }
+
+    }
+
 
 }
