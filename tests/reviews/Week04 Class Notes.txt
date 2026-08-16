@@ -1,0 +1,37 @@
+Week04
+
+    Topics:
+        Jenkins Quick Review
+        
+        GitHub Actions
+
+        Playwright fixtures:
+            page
+            Context
+            Browser
+            Request
+            BaseURL
+
+Problems with Jenkins:
+    Report
+    Jenkins settings (plugins, tools)
+    Github credentials configurations
+    Third Party Tool
+
+
+Next Week: Project Implementation
+
+    During the week days:
+        Setting playwright BDD framework (3 hours videos)
+        Work on the automation of SEP user stories
+
+    During the live class:
+        2 user stories automation 
+
+        Spartan APP
+       
+
+CI Pipeline assignment (After project implementation Week):
+    1. setup smoke workflow on github actions that run every day from Monday to Friday at 8 AM EST
+    2. set regression workflow on github actions that run every day from Monday to Thursday at 7 PM EST
+
